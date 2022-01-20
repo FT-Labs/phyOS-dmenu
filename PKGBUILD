@@ -15,8 +15,14 @@ options=('zipman')
 source=('git://github.com/PhyTech-R0/dmenu-phyOS')
 md5sums=('SKIP')
 
+build() {
+	cd $pkgname
+	make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
+}
+
 
 package() {
 	cd "$pkgname"
-	make DESTDIR="$pkgdir/" install
+	make PREFIX=/usr DESTDIR="$pkgdir/" install
+	install -m644 -D LICENSE $pkgdir/usr/share/licenses/$pkgname/LICENSE
 }
