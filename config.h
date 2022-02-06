@@ -22,7 +22,7 @@ static const unsigned int alphas[SchemeLast][2] = {
 
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 0;
-static unsigned int lineheight = 35;
+static unsigned int lineheight = 36;
 static unsigned int min_lineheight = 8;
 
 
